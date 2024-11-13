@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     cards.forEach((card, index) => {
       setTimeout(() => {
         card.classList.add('show');
-      }, index * 100); // Staggered delay for animation
+      }, index * 100)
     });
   });
   
