@@ -9,7 +9,7 @@ body, html {
 
 /* Background Animation */
 .background {
-    background: linear-gradient(130deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(130deg, #131415, #131210, #202324);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -26,12 +26,12 @@ body, html {
     width: 300%;
     height: 300%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1%, transparent 50%);
-    animation: move 15s infinite linear;
+    animation: move 10s infinite linear;
     opacity: 0.7;
 }
 
 .background::after {
-    animation-delay: -7s;
+    animation-delay: -5s;
 }
 
 @keyframes move {
@@ -43,8 +43,8 @@ body, html {
     }
 }
 
-/* Login Container */
-.login-container {
+/* Form Container */
+.form-container {
     background: rgba(0, 0, 0, 0.8);
     padding: 20px 30px;
     border-radius: 8px;
@@ -86,7 +86,9 @@ label {
 }
 
 input[type="text"], 
-input[type="password"] {
+input[type="tel"], 
+input[type="number"], 
+select {
     width: 100%;
     padding: 10px;
     border: 1px solid #333;
@@ -96,13 +98,19 @@ input[type="password"] {
     background-color: #222;
 }
 
-input:focus {
+input:focus, select:focus {
     border-color: #00bcd4;
     outline: none;
     box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
 }
 
-input[type="checkbox"] {
+.radio-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input[type="radio"], input[type="checkbox"] {
     margin-right: 5px;
 }
 
@@ -120,13 +128,13 @@ button {
     transition: all 0.3s ease;
 }
 
-.btn-login {
+.btn-submit {
     background-color: #00bcd4;
     color: #fff;
 }
 
-.btn-login:hover {
-    background-color: #008ba3;
+.btn-submit:hover {
+    background-color: #f0f0f0;
 }
 
 .btn-reset {
@@ -138,23 +146,56 @@ button {
     background-color: #c62828;
 }
 
-/* Footer */
-.footer {
-    margin-top: 15px;
-    text-align: center;
-}
 
-.footer p {
-    color: #aaa;
+.sign-in-button{
+    background-color: #00bcd4;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
     font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.footer a {
-    color: #00bcd4;
-    text-decoration: none;
+/* Password Input Styling */
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #222;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="password"]:focus {
+    border-color: #00bcd4;
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+    outline: none;
+}
+
+/* Add an eye icon for show/hide password functionality */
+.password-container {
+    position: relative;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    padding-right: 40px; /* Add padding for the eye icon */
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
     transition: color 0.3s ease;
 }
 
-.footer a:hover {
-    color: #008ba3;
+.password-container .toggle-password:hover {
+    color: #fff;
 }

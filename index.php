@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user_id']) && isset($_COOKIE['user_id'])) {
-    // Auto-login using cookies
+    // cookies
     $_SESSION['user_id'] = $_COOKIE['user_id'];
     $_SESSION['first_name'] = $_COOKIE['first_name'];
 }
@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['user_id'])) {
         </ul>
     </nav>
 
-    <!-- Page content here -->
+    
 
 </body>
 </html>
